@@ -13,7 +13,6 @@ void print_square(int leftCol, int size)
     putchar('\n');
   }
 }
-
 // Prints a triangle of specified height whose left edge is at col leftCol.
 void print_triangle(int leftCol, int size)
 {
@@ -26,3 +25,13 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+void print_arrow(int height, int width)
+{
+    print_triangle(height, width);
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j < width / 2; j++){
+            printf(" ");
+        }
+        printf("\t  *\n");
+    }
+}

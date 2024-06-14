@@ -14,3 +14,20 @@ void print_char_5x7(char c)
   }
   putchar('\n');
 }
+
+void print_char_8x12(char c)
+{
+    if(c < 0x20 || c >= 0x7F){
+        return;
+    }
+    int index = c - 0x20;
+    for(int row = 0; row < 12; row++){
+        unsigned char rowBits = font_8x12[index][row];
+        for(int col = 0; col < 8; col++){
+            unsigned char bitMask = 1 << (7 - col);
+            putchar((rowBits & bitMask) ? '*' : ' ');
+        }
+        putchar('\n');
+    }
+    putchar('\n');
+}
